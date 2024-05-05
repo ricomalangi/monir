@@ -1,0 +1,194 @@
+CRITICAL - 2024-05-05 02:40:21 --> Error: Call to a member function getUsers() on null
+[Method: GET, Route: user]
+in APPPATH\Controllers\User.php on line 10.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->index()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-05 02:43:00 --> Error: Call to a member function getUsers() on null
+[Method: GET, Route: user]
+in APPPATH\Controllers\User.php on line 10.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->index()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-05 04:56:08 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "user/add.php"
+[Method: GET, Route: user/add]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('user/add.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user/add', [], true)
+ 3 APPPATH\Controllers\User.php(15): view('user/add')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->add()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-05-05 05:05:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-05 05:05:27 --> Error: Call to undefined function validation_list_errors()
+[Method: GET, Route: user/add]
+in APPPATH\Views\user\create.php on line 26.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user/create', [], true)
+ 4 APPPATH\Controllers\User.php(15): view('user/create')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->add()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-05 05:05:41 --> ParseError: syntax error, unexpected token "return"
+[Method: GET, Route: user/add]
+in APPPATH\Controllers\User.php on line 16.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\LARAGON\\kosfadli\\app\\Controllers\\User.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\User')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\User')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-05-05 05:05:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-05 05:05:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-05 07:59:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-05 08:41:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-05 08:41:32 --> CSRF token verified.
+INFO - 2024-05-05 08:41:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-05 08:41:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-05 08:41:51 --> CSRF token verified.
+CRITICAL - 2024-05-05 08:41:51 --> CodeIgniter\Database\Exceptions\DataException: Allowed fields must be specified for model: "App\Models\UserModel"
+[Method: POST, Route: user/add]
+in SYSTEMPATH\Model.php on line 812.
+ 1 SYSTEMPATH\Model.php(812): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\UserModel')
+ 2 SYSTEMPATH\BaseModel.php(821): CodeIgniter\Model->doProtectFieldsForInsert([...])
+ 3 SYSTEMPATH\Model.php(790): CodeIgniter\BaseModel->insert([...], false)
+ 4 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 5 APPPATH\Controllers\User.php(33): CodeIgniter\BaseModel->save([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->store()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-05-05 08:44:18 --> CSRF token verified.
+CRITICAL - 2024-05-05 08:44:18 --> ErrorException: Attempt to read property "id" on array
+[Method: GET, Route: user]
+in APPPATH\Views\user\index.php on line 38.
+ 1 APPPATH\Views\user\index.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'D:\\LARAGON\\kosfadli\\app\\Views\\user\\index.php', 38)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\LARAGON\\kosfadli\\app\\Views\\user\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user/index', [], true)
+ 5 APPPATH\Controllers\User.php(11): view('user/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-05 08:44:42 --> ErrorException: Attempt to read property "id" on array
+[Method: GET, Route: user]
+in APPPATH\Views\user\index.php on line 38.
+ 1 APPPATH\Views\user\index.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'D:\\LARAGON\\kosfadli\\app\\Views\\user\\index.php', 38)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\LARAGON\\kosfadli\\app\\Views\\user\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user/index', [], true)
+ 5 APPPATH\Controllers\User.php(11): view('user/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-05 08:45:45 --> ErrorException: Attempt to read property "id" on array
+[Method: GET, Route: user]
+in APPPATH\Views\user\index.php on line 38.
+ 1 APPPATH\Views\user\index.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'D:\\LARAGON\\kosfadli\\app\\Views\\user\\index.php', 38)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\LARAGON\\kosfadli\\app\\Views\\user\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user/index', [], true)
+ 5 APPPATH\Controllers\User.php(11): view('user/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-05 08:46:06 --> ErrorException: Attempt to read property "id" on array
+[Method: GET, Route: user]
+in APPPATH\Views\user\index.php on line 38.
+ 1 APPPATH\Views\user\index.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'D:\\LARAGON\\kosfadli\\app\\Views\\user\\index.php', 38)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\LARAGON\\kosfadli\\app\\Views\\user\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user/index', [], true)
+ 5 APPPATH\Controllers\User.php(11): view('user/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-05 08:46:07 --> ErrorException: Attempt to read property "id" on array
+[Method: GET, Route: user]
+in APPPATH\Views\user\index.php on line 38.
+ 1 APPPATH\Views\user\index.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'D:\\LARAGON\\kosfadli\\app\\Views\\user\\index.php', 38)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\LARAGON\\kosfadli\\app\\Views\\user\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user/index', [], true)
+ 5 APPPATH\Controllers\User.php(11): view('user/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-05 09:41:45 --> ErrorException: Attempt to read property "nama_lengkap" on array
+[Method: GET, Route: user]
+in APPPATH\Views\user\index.php on line 38.
+ 1 APPPATH\Views\user\index.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nama_lengkap" on array', 'D:\\LARAGON\\kosfadli\\app\\Views\\user\\index.php', 38)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\LARAGON\\kosfadli\\app\\Views\\user\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user/index', [], true)
+ 5 APPPATH\Controllers\User.php(11): view('user/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-05-05 09:46:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-05 09:47:04 --> CSRF token verified.
+INFO - 2024-05-05 09:47:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-05 09:47:27 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: user/add]
+in SYSTEMPATH\Security\Security.php on line 262.
+ 1 SYSTEMPATH\Security\Security.php(262): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(57): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(203): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('user/add', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-05-05 09:47:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-05 09:47:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-05 09:47:52 --> CSRF token verified.
+CRITICAL - 2024-05-05 09:47:52 --> ErrorException: Undefined array key "no_telp"
+[Method: POST, Route: user/add]
+in APPPATH\Controllers\User.php on line 36.
+ 1 APPPATH\Controllers\User.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "no_telp"', 'D:\\LARAGON\\kosfadli\\app\\Controllers\\User.php', 36)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->store()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-05-05 09:48:10 --> CSRF token verified.
+INFO - 2024-05-05 09:48:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-05 09:49:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

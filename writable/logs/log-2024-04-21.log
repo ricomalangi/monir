@@ -1,0 +1,61 @@
+CRITICAL - 2024-04-21 02:00:38 --> TypeError: CodeIgniter\Router\RouteCollection::processArrayCallableSyntax(): Return value must be of type string, array returned
+[Method: GET, Route: halaman]
+in SYSTEMPATH\Router\RouteCollection.php on line 1592.
+ 1 SYSTEMPATH\Router\RouteCollection.php(1456): CodeIgniter\Router\RouteCollection->processArrayCallableSyntax('pages', [...])
+ 2 SYSTEMPATH\Router\RouteCollection.php(1053): CodeIgniter\Router\RouteCollection->create('GET', 'pages', [...], null)
+ 3 APPPATH\Config\Routes.php(9): CodeIgniter\Router\RouteCollection->get('pages', [...])
+ 4 SYSTEMPATH\Router\RouteCollection.php(340): require('D:\\LARAGON\\kosfadli\\app\\Config\\Routes.php')
+ 5 SYSTEMPATH\CodeIgniter.php(823): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-04-21 02:01:25 --> TypeError: CodeIgniter\Router\RouteCollection::processArrayCallableSyntax(): Return value must be of type string, array returned
+[Method: GET, Route: halaman]
+in SYSTEMPATH\Router\RouteCollection.php on line 1592.
+ 1 SYSTEMPATH\Router\RouteCollection.php(1456): CodeIgniter\Router\RouteCollection->processArrayCallableSyntax('pages', [...])
+ 2 SYSTEMPATH\Router\RouteCollection.php(1053): CodeIgniter\Router\RouteCollection->create('GET', 'pages', [...], null)
+ 3 APPPATH\Config\Routes.php(9): CodeIgniter\Router\RouteCollection->get('pages', [...])
+ 4 SYSTEMPATH\Router\RouteCollection.php(340): require('D:\\LARAGON\\kosfadli\\app\\Config\\Routes.php')
+ 5 SYSTEMPATH\CodeIgniter.php(823): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-04-21 02:01:43 --> TypeError: CodeIgniter\Router\RouteCollection::processArrayCallableSyntax(): Return value must be of type string, array returned
+[Method: GET, Route: halaman]
+in SYSTEMPATH\Router\RouteCollection.php on line 1592.
+ 1 SYSTEMPATH\Router\RouteCollection.php(1456): CodeIgniter\Router\RouteCollection->processArrayCallableSyntax('pages', [...])
+ 2 SYSTEMPATH\Router\RouteCollection.php(1053): CodeIgniter\Router\RouteCollection->create('GET', 'pages', [...], null)
+ 3 APPPATH\Config\Routes.php(9): CodeIgniter\Router\RouteCollection->get('pages', [...])
+ 4 SYSTEMPATH\Router\RouteCollection.php(340): require('D:\\LARAGON\\kosfadli\\app\\Config\\Routes.php')
+ 5 SYSTEMPATH\CodeIgniter.php(823): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-04-21 02:02:16 --> TypeError: CodeIgniter\Router\RouteCollection::processArrayCallableSyntax(): Return value must be of type string, array returned
+[Method: GET, Route: halaman]
+in SYSTEMPATH\Router\RouteCollection.php on line 1592.
+ 1 SYSTEMPATH\Router\RouteCollection.php(1456): CodeIgniter\Router\RouteCollection->processArrayCallableSyntax('pages', [...])
+ 2 SYSTEMPATH\Router\RouteCollection.php(1053): CodeIgniter\Router\RouteCollection->create('GET', 'pages', [...], null)
+ 3 APPPATH\Config\Routes.php(9): CodeIgniter\Router\RouteCollection->get('pages', [...])
+ 4 SYSTEMPATH\Router\RouteCollection.php(340): require('D:\\LARAGON\\kosfadli\\app\\Config\\Routes.php')
+ 5 SYSTEMPATH\CodeIgniter.php(823): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-04-21 02:03:27 --> ArgumentCountError: Too few arguments to function App\Controllers\Halaman::halaman_update(), 0 passed in D:\LARAGON\kosfadli\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: halaman/edit/3]
+in APPPATH\Controllers\Halaman.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Halaman->halaman_update()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Halaman))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
