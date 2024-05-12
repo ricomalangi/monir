@@ -40,7 +40,7 @@
                         <td><?= esc($user['email']) ?></td>
                         <td><?= esc($user['no_hp']) ?></td>
                         <td>
-                            <a href="<?= base_url('user/edit/') ?>" class="btn btn-md btn-primary">Edit</a>
+                            <a href="<?= base_url("user/" . $user['id'] . "/edit") ?>" class="btn btn-md btn-primary">Edit</a>
                             <a href="" class="btn btn-md btn-danger">Delete</a>
                         </td>
                     </tr>

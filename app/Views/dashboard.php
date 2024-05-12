@@ -18,32 +18,44 @@
 
 <!-- Main content -->
 <section class="content">
-
-    <!-- Default box -->
-    <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Title</h3>
-
-            <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                    <i class="fas fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                    <i class="fas fa-times"></i>
-                </button>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-6">
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3><?= esc($total_kamar) ?></h3>
+    
+                        <p>Jumlah Kamar</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-door-open"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-6">
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3><?= esc($total_user) ?></h3>
+                        <p>Total User</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-6">
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3><?= "0" ?> lt</h3>
+                        <p>Penggunaan Air</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="card-body">
-            Start creating your amazing application!
-        </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-            Footer
-        </div>
-        <!-- /.card-footer-->
     </div>
-    <!-- /.card -->
-
 </section>
 <!-- /.content -->
 <?= $this->endSection() ?>

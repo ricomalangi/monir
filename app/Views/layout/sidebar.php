@@ -24,15 +24,15 @@
                with font-awesome or any other icon font library -->
                 <li class="nav-item">
                     <a href="<?= base_url('dashboard') ?>" class="nav-link <?= url_is('dashboard') ? 'active' : '' ?>">
-                        <i class="nav-icon fas fa-users"></i>
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url('kamar') ?>" class="nav-link <?= url_is('kamar') ? 'active' : '' ?>">
-                        <i class="nav-icon fas fa-users"></i>
+                    <a href="<?= base_url('kamar') ?>" class="nav-link <?= url_is('kamar*') ? 'active' : '' ?>">
+                        <i class="nav-icon fas fa-door-open"></i>
                         <p>
                             Kamar
                         </p>
