@@ -99,4 +99,18 @@ class Kamar extends BaseController
         $builder->update();
         return redirect()->to('/kamar');
     }
+
+    public function jsonHargaAir()
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('tb_pengaturan');
+        $hargaAir = $builder->select('harga_air')->where('id', 1)->get()->getRowArray();
+    
+        if ($hargaAir) {
+            return $this->response->setJSON($hargaAir);
+        } else {
+            return $this->response->setStatusCode(404)->setJSON(['message' => 'Data not found']);
+        }
+
+    }
 }

@@ -20,3 +20,5 @@ $routes->post('/kamar/add', 'Kamar::store');
 $routes->get('/kamar/(:segment)/edit', 'Kamar::edit/$1');
 $routes->post('/kamar/update', 'Kamar::update');
 $routes->post('/harga-air', 'Kamar::hargaAir');
+
+$routes->get('/json/harga-air', 'Kamar::jsonHargaAir');
