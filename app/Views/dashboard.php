@@ -23,35 +23,39 @@
             <div class="col-lg-4 col-6">
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3><?= esc($total_kamar) ?></h3>
-    
-                        <p>Jumlah Kamar</p>
+                        <h3><?= esc('2') ?>w</h3>
+
+                        <p>Total penggunaan listrik</p>
                     </div>
                     <div class="icon">
                         <i class="fas fa-door-open"></i>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-6">
-                <div class="small-box bg-info">
-                    <div class="inner">
-                        <h3><?= esc($total_user) ?></h3>
-                        <p>Total User</p>
+            <div class="col-lg-2 col-6">
+                <div class="card card-info">
+                    <div class="card-header">
+                        <h3 class="card-title">Controlling AC</h3>
                     </div>
-                    <div class="icon">
-                        <i class="fas fa-users"></i>
+                    <div class="card-body text-center">
+                        <input type="checkbox" name="my-checkbox" checked data-bootstrap-switch data-off-color="danger" data-on-color="success">
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-6">
-                <div class="small-box bg-info">
-                    <div class="inner">
-                        <h3><?= "0" ?> lt</h3>
-                        <p>Penggunaan Air</p>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card bg-info">
+                    <div class="card-header border-0">
+                        <h3 class="card-title">
+                            <i class="fas fa-th mr-1"></i>
+                            Sales Graph
+                        </h3>
                     </div>
-                    <div class="icon">
-                        <i class="fas fa-users"></i>
+                    <div class="card-body">
+                        <canvas class="chart" id="line-chart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                     </div>
+                    <!-- /.card-body -->
                 </div>
             </div>
         </div>

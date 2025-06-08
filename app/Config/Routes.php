@@ -22,4 +22,4 @@ $routes->post('/kamar/update', 'Kamar::update');
 $routes->post('/harga-air', 'Kamar::hargaAir');
 
 $routes->get('/json/harga-air', 'Kamar::jsonHargaAir');
-$routes->get('/recieve', 'Recievedata::index');
+$routes->get('/api/pzem-data', 'Recievedata::index');
