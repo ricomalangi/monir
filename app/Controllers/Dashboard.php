@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\KamarModel;
+use App\Models\RelayModel;
 use App\Models\UserModel;
 
 class Dashboard extends BaseController
@@ -10,11 +11,10 @@ class Dashboard extends BaseController
     public function index(): string
     {
         // $user = model(UserModel::class);
-        // $kamar = model(KamarModel::class);
-        // $data = [
-        //     'total_kamar' => $user->countAll(),
-        //     'total_user' => $kamar->countAll()
-        // ];
-        return view('dashboard');
+        $relay = model(RelayModel::class);
+        $data = [
+            'lampu' => $relay->getRelay(1)
+        ];
+        return view('dashboard', $data);
     }
 }

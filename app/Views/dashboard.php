@@ -38,7 +38,10 @@
                         <h3 class="card-title">Controlling AC</h3>
                     </div>
                     <div class="card-body text-center">
-                        <input type="checkbox" name="my-checkbox" checked data-bootstrap-switch data-off-color="danger" data-on-color="success">
+                        <input type="hidden" id="csrf_token" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>">
+
+                        <input type="checkbox" class="relay-switch" name="relay" data-bootstrap-switch data-off-color="danger"
+                            data-id="<?= $lampu['id'] ?>" data-on-color="success" <?= $lampu['status'] ? 'checked' : '' ?>>
                     </div>
                 </div>
             </div>

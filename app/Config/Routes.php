@@ -14,12 +14,15 @@ $routes->post('/user/add', 'User::store');
 $routes->get('/user/(:segment)/edit', 'User::edit/$1');
 $routes->post('/user/update', 'User::update');
 
-$routes->get('/kamar', 'Kamar::index');
-$routes->get('/kamar/add', 'Kamar::add');
-$routes->post('/kamar/add', 'Kamar::store');
-$routes->get('/kamar/(:segment)/edit', 'Kamar::edit/$1');
-$routes->post('/kamar/update', 'Kamar::update');
+$routes->get('/relay', 'Relay::index');
+$routes->get('/relay/add', 'Relay::add');
+$routes->post('/relay/add', 'Relay::store');
+$routes->get('/relay/(:segment)/edit', 'Relay::edit/$1');
+$routes->post('/relay/update', 'Relay::update');
+$routes->post('/relay/update-status', 'Relay::updateStatus');
+
 $routes->post('/harga-air', 'Kamar::hargaAir');
 
 $routes->get('/json/harga-air', 'Kamar::jsonHargaAir');
 $routes->get('/api/pzem-data', 'Recievedata::index');
+$routes->get('/api/relay/(:segment)', 'Recievedata::relay/$1');

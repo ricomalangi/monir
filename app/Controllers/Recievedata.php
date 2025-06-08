@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\RelayModel;
+
 class Recievedata extends BaseController
 {
     public function index()
@@ -30,5 +32,21 @@ class Recievedata extends BaseController
             'data' => $data,
             'created_at' => date("Y-m-d h:i:s")
         ]);
+    }
+
+    public function relay($id)
+    {
+        $relay = model(RelayModel::class);
+        $data = $relay->getRelay($id);
+        if (!$data) {
+            return $this->response->setJSON([
+                'message' => 'relay is not found',
+            ], 404);
+        }
+        return $this->response->setJSON([
+            'message' => 'success',
+            'nama_relay' => $data['nama_relay'],
+            'status' => (int) $data['status']
+        ], 200);
     }
 }

@@ -28,6 +28,14 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="<?= base_url('relay') ?>" class="nav-link <?= url_is('relay') ? 'active' : '' ?>">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Relay
+                        </p>
+                    </a>
+                </li>
 
             </ul>
         </nav>

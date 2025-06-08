@@ -111,6 +111,39 @@
             options: salesGraphChartOptions
         })
     </script>
+    <script>
+        $('.relay-switch').on('switchChange.bootstrapSwitch', function(event, state) {
+            var checkbox = $(this);
+            var id = checkbox.data('id');
+            var status = state ? 1 : 0;
+
+            var tokenName = $('#csrf_token').attr('name');
+            var tokenValue = $('#csrf_token').val();
+
+            // Siapkan body data
+            var data = {
+                id: id,
+                status: status
+            };
+            data[tokenName] = tokenValue; // tambahkan token ke body POST
+            // Kirim data via AJAX
+            $.ajax({
+                url: '/relay/update-status', // Ganti sesuai endpoint-mu
+                method: 'POST',
+                data: data,
+                success: function(response) {
+                    if (response.csrfToken) {
+                        $('#csrf_token').val(response.csrfToken);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error updating status:', error);
+                    // Bisa juga rollback checkbox jika perlu
+                    checkbox.bootstrapSwitch('state', !state, true); // Balik lagi ke posisi sebelumnya
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
