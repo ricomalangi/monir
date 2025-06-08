@@ -1,2 +1,6 @@
+.env
+vendor/
 .vscode/
+writable/logs
 writable/debugbar
+writable/session
