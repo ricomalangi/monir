@@ -7,6 +7,8 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 $routes->get('/dashboard', 'Dashboard::index');
+$routes->post('/dashboard/total_power', 'Dashboard::getTotalPower');
+$routes->post('/dashboard/update-harga', 'Dashboard::updateHarga');
 
 $routes->get('/user', 'User::index');
 $routes->get('/user/add', 'User::add');
@@ -25,4 +27,10 @@ $routes->post('/harga-air', 'Kamar::hargaAir');
 
 $routes->get('/json/harga-air', 'Kamar::jsonHargaAir');
 $routes->get('/api/pzem-data', 'Recievedata::index');
+$routes->get('/api/total-bayar', 'Recievedata::totalHarga');
 $routes->get('/api/relay/(:segment)', 'Recievedata::relay/$1');
+
+$routes->post('voice-command/process', 'VoiceCommand::process');
+$routes->get('voice-command', function () {
+    return view('voice_command');
+});

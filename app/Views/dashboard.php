@@ -20,20 +20,67 @@
 <section class="content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-4 col-6">
+            <div class="col-lg-5 col-6">
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3><?= esc('2') ?>w</h3>
-
+                        <h3 class="total-power"><?= esc($total_power) ?> W</h3>
                         <p>Total penggunaan listrik</p>
+                        <select name="bulan" id="bulan" class="form-control">
+                            <?php
+                            $bulan = [
+                                "01" => "Januari",
+                                "02" => "Februari",
+                                "03" => "Maret",
+                                "04" => "April",
+                                "05" => "Mei",
+                                "06" => "Juni",
+                                "07" => "Juli",
+                                "08" => "Agustus",
+                                "09" => "September",
+                                "10" => "Oktober",
+                                "11" => "November",
+                                "12" => "Desember"
+                            ];
+
+                            $bulan_sekarang = date("m"); // ambil bulan sekarang dalam format dua digit
+
+                            foreach ($bulan as $value => $nama) {
+                                $selected = ($value == $bulan_sekarang) ? "selected" : "";
+                                echo "<option value=\"$value\" $selected>$nama</option>";
+                            }
+                            ?>
+                        </select>
+
                     </div>
                     <div class="icon">
-                        <i class="fas fa-door-open"></i>
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-6">
+                <div class="small-box bg-teal">
+                    <div class="inner">
+                        <h3 id="total-harga">Rp <?= number_format($total_power * $harga_listrik, 0, ',', '.') ?></h3>
+                        <p>Total tagihan listrik bulan <b><u><span class="bulan-tagihan"><?= esc($bulan_berjalan) ?></u></span></b></p>
+
+                        <div class="input-group align-items-center">
+                            <div class="input-group-prepend d-flex align-items-center">
+                                <h5 class="mb-0 mr-2"><b>Harga Listrik</b></h5>
+                                <span class="input-group-text">Rp</span>
+                            </div>
+                            <input type="text" id="harga_listrik" class="form-control" value="<?= esc($harga_listrik ?? '') ?>">
+                            <div class="input-group-append">
+                                <button type="button" id="updateHarga" class="btn btn-info btn-flat">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-dollar-sign"></i>
                     </div>
                 </div>
             </div>
             <div class="col-lg-2 col-6">
-                <div class="card card-info">
+                <div class="card card-warning">
                     <div class="card-header">
                         <h3 class="card-title">Controlling AC</h3>
                     </div>

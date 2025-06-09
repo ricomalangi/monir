@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\DataSensorModel;
 use App\Models\RelayModel;
 
 class Recievedata extends BaseController
@@ -43,10 +44,35 @@ class Recievedata extends BaseController
                 'message' => 'relay is not found',
             ], 404);
         }
-        return $this->response->setJSON([
-            'message' => 'success',
-            'nama_relay' => $data['nama_relay'],
-            'status' => (int) $data['status']
-        ], 200);
+        return $this->response->setBody((string)$data['status'])->setStatusCode(200);
+    }
+
+    public function totalHarga()
+    {
+        $month = date('m');
+        $tahun = date('Y');
+        $jsonPath = WRITEPATH . 'harga_listrik.json';
+        if (file_exists($jsonPath)) {
+            $jsonData = json_decode(file_get_contents($jsonPath), true);
+            $harga_listrik = $jsonData['harga'] ?? 0;
+        }
+        $data_sensor = model(DataSensorModel::class);
+
+        $results = $data_sensor
+            ->where("MONTH(created_at) = $month")
+            ->where("YEAR(created_at) = $tahun")
+            ->findAll();
+
+        $totalPower = 0;
+
+        foreach ($results as $row) {
+            $decoded = json_decode($row['data'], true);
+            if (isset($decoded['power'])) {
+                $totalPower += (float) $decoded['power'];
+            }
+        }
+        $total_harga = $totalPower * $harga_listrik;
+
+        return $this->response->setBody((string)$total_harga)->setStatusCode(200);
     }
 }

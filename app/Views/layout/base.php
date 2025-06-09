@@ -143,6 +143,67 @@
                 }
             });
         });
+
+        $('#bulan').on('change', function() {
+            var bulan = $(this).val();
+            var nama_bulan = $(this).find(':selected').text();
+            var tokenName = $('#csrf_token').attr('name');
+            var tokenValue = $('#csrf_token').val();
+            var data = {
+                bulan: bulan,
+            };
+            data[tokenName] = tokenValue;
+            $.ajax({
+                url: '/dashboard/total_power',
+                type: 'POST',
+                data: data,
+                success: function(response) {
+                    if (response.success) {
+                        $('.total-power').html(response.total_power + ' W');
+                        $('.bulan-tagihan').html(nama_bulan)
+                        $('#csrf_token').val(response.csrfToken);
+
+                        let harga_listrik = $('#harga_listrik').val();
+                        let total_harga = parseInt(response.total_power) * parseInt(harga_listrik);
+                        $('#total-harga').html('Rp ' + total_harga.toLocaleString('id-ID'));
+                    } else {
+                        alert('Gagal mengambil data');
+                    }
+                    if (response.csrfToken) {
+                        $('#csrf_token').val(response.csrfToken);
+                    }
+                },
+                error: function(xhr) {
+                    console.error(xhr.responseText);
+                }
+            });
+        });
+
+        $('#updateHarga').on('click', function() {
+            const harga = $('#harga_listrik').val();
+            const watt = parseInt($('.total-power').text());
+            var tokenName = $('#csrf_token').attr('name');
+            var tokenValue = $('#csrf_token').val();
+            var data = {
+                harga: harga,
+            };
+            data[tokenName] = tokenValue;
+            $.ajax({
+                url: "<?= base_url('dashboard/update-harga') ?>",
+                method: "POST",
+                data: data,
+                success: function(response) {
+                    if (response.success) {
+                        $('#csrf_token').val(response.csrfToken);
+                        let total_harga = parseInt(harga) * watt;
+                        $('#total-harga').html('Rp ' + total_harga.toLocaleString('id-ID'));
+                    }
+                },
+                error: function(xhr) {
+                    alert('Gagal memperbarui harga listrik: ' + xhr.responseText);
+                }
+            });
+        });
     </script>
 </body>
 
