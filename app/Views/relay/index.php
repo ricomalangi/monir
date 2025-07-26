@@ -10,7 +10,7 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-                    <li class="breadcrumb-item active">User</li>
+                    <li class="breadcrumb-item active">Relay</li>
                 </ol>
             </div>
         </div>
@@ -21,14 +21,14 @@
 <section class="content">
     <div class="card">
         <div class="card-body">
-            <a href="<?= base_url('relay/add') ?>" class="btn btn-primary btn-md"><i class="fa fa-plus"></i> Tambah Relay</a>
+            <!-- <a href="<?= base_url('relay/add') ?>" class="btn btn-primary btn-md"><i class="fa fa-plus"></i> Tambah Relay</a> -->
             <table class="table mt-3">
                 <thead>
                     <tr>
                         <th>No</th>
                         <th>Nama Relay</th>
                         <th>Status</th>
-                        <th>Action</th>
+                        <!-- <th>Action</th> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -38,9 +38,9 @@
                             <td><?= esc($id++) ?></td>
                             <td><?= esc($k['nama_relay']) ?></td>
                             <td><?= $k['status'] ? '<span class="badge badge-success">aktif</span>' : '<span class="badge badge-danger">non-aktif</span>' ?></td>
-                            <td>
+                            <!-- <td>
                                 <a href="<?= base_url("relay/" . $k['id'] . "/edit") ?>" class="btn btn-md btn-primary">Edit</a>
-                            </td>
+                            </td> -->
                         </tr>
                     <?php endforeach ?>
                 </tbody>

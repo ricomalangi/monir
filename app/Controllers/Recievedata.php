@@ -27,7 +27,7 @@ class Recievedata extends BaseController
         ];
         $db->table('tb_data')->insert([
             'data' => json_encode($data),
-            'created_at' => date("Y-m-d h:i:sa")
+            'created_at' => date("Y-m-d H:i:s")
         ]);
         return $this->response->setJSON([
             'data' => $data,
@@ -57,21 +57,13 @@ class Recievedata extends BaseController
             $harga_listrik = $jsonData['harga'] ?? 0;
         }
         $data_sensor = model(DataSensorModel::class);
-
-        $results = $data_sensor
-            ->where("MONTH(created_at) = $month")
+        $get_last_power = $data_sensor->where("MONTH(created_at) = $month")
             ->where("YEAR(created_at) = $tahun")
-            ->findAll();
-
-        $totalPower = 0;
-
-        foreach ($results as $row) {
-            $decoded = json_decode($row['data'], true);
-            if (isset($decoded['power'])) {
-                $totalPower += (float) $decoded['power'];
-            }
-        }
-        $total_harga = $totalPower * $harga_listrik;
+            ->orderBy('created_at', 'DESC')
+            ->first();
+        $get_last_power = json_decode($get_last_power['data'], true);
+        $get_last_power = $get_last_power['energy'];
+        $total_harga = $get_last_power * $harga_listrik;
 
         return $this->response->setBody((string)$total_harga)->setStatusCode(200);
     }

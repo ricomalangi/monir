@@ -13,6 +13,13 @@
                 </ol>
             </div>
         </div>
+        <div class="row mb-3">
+            <div class="col-12 text-left">
+                <button id="voiceBtn" class="btn btn-danger">
+                    <i class="fas fa-microphone"></i> Voice Command
+                </button>
+            </div>
+        </div>
     </div><!-- /.container-fluid -->
 </section>
 
@@ -20,10 +27,10 @@
 <section class="content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-5 col-6">
+            <div class="col-lg-3 col-6">
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3 class="total-power"><?= esc($total_power) ?> W</h3>
+                        <h3 class="total-power"><?= number_format($total_power, 2) ?> Kwh</h3>
                         <p>Total penggunaan listrik</p>
                         <select name="bulan" id="bulan" class="form-control">
                             <?php
@@ -57,10 +64,21 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5 col-6">
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3 class="total-jam"><?= $total_jam ?> Jam</h3>
+                        <p>Lama penggunaan listrik</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
                 <div class="small-box bg-teal">
                     <div class="inner">
-                        <h3 id="total-harga">Rp <?= number_format($total_power * $harga_listrik, 0, ',', '.') ?></h3>
+                        <h3 id="total-harga">Rp <?= $total_bayar ?></h3>
                         <p>Total tagihan listrik bulan <b><u><span class="bulan-tagihan"><?= esc($bulan_berjalan) ?></u></span></b></p>
 
                         <div class="input-group align-items-center">
@@ -79,27 +97,36 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-2 col-6">
+            <div class="col-lg-3 col-6">
                 <div class="card card-warning">
                     <div class="card-header">
                         <h3 class="card-title">Controlling AC</h3>
                     </div>
                     <div class="card-body text-center">
                         <input type="hidden" id="csrf_token" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>">
-
                         <input type="checkbox" class="relay-switch" name="relay" data-bootstrap-switch data-off-color="danger"
                             data-id="<?= $lampu['id'] ?>" data-on-color="success" <?= $lampu['status'] ? 'checked' : '' ?>>
+                        <hr>
+                        <div class="timer-setting mt-3">
+                            <label for="ac-timer" class="mb-2"><b>Timer AC (menit)</b></label>
+                            <div class="input-group justify-content-center">
+                                <button type="button" class="btn btn-outline-secondary" id="timer-minus"><i class="fas fa-minus"></i></button>
+                                <input type="number" data-relay-id="<?= $lampu['id'] ?>" id="ac-timer" class="form-control text-center mx-2" value="<?= $timer_lampu ?>" min="1" max="720" style="width:80px;">
+                                <button type="button" class="btn btn-outline-secondary" id="timer-plus"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <button type="button" class="btn btn-success mt-2" id="set-timer-btn">Set Timer</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="card bg-info">
-                    <div class="card-header border-0">
+                <div class="card">
+                    <div class="card-header bg-primary border-0">
                         <h3 class="card-title">
-                            <i class="fas fa-th mr-1"></i>
-                            Sales Graph
+                            <i class="fas fa-bolt mr-1"></i>
+                            Watt
                         </h3>
                     </div>
                     <div class="card-body">
@@ -108,6 +135,16 @@
                     <!-- /.card-body -->
                 </div>
             </div>
+        </div>
+    </div>
+    <div id="voice-modal" class="voice-modal-overlay d-none">
+        <div class="voice-modal-content text-center">
+            <div class="voice-circle">
+                <div class="pulse-ring"></div>
+                <div class="mic-icon"><i class="fas fa-microphone"></i></div>
+            </div>
+            <div class="voice-text mt-3" id="voice-status">Mendengarkan...</div>
+            <div class="voice-transcript mt-1" id="voice-transcript"></div>
         </div>
     </div>
 </section>

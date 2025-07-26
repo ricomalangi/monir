@@ -9,6 +9,9 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/dashboard', 'Dashboard::index');
 $routes->post('/dashboard/total_power', 'Dashboard::getTotalPower');
 $routes->post('/dashboard/update-harga', 'Dashboard::updateHarga');
+$routes->post('/dashboard/chart-power', 'Dashboard::chartPower');
+$routes->post('/dashboard/update-relay', 'Dashboard::updateRelay');
+$routes->post('/dashboard/set-timer', 'Dashboard::setTimer');
 
 $routes->get('/user', 'User::index');
 $routes->get('/user/add', 'User::add');
